@@ -6,15 +6,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> Bouncing ball - lesson 3 </title>
+       
         <style>* { padding: 0; margin: 0; } canvas { background: #eee; display: block; margin: 0 auto; } 
           /* makes the canvas and the color of the canvas */
-    </style>
+        </style>
     </head>
 
     <body>
 
         <canvas id="myCanvas" width="480" height="320"></canvas>
       <!--how big my canvas is -->
+       
         <script>
             var canvas = document.getElementById("myCanvas");
             var ctx = canvas.getContext("2d");
@@ -27,6 +29,7 @@
             var paddleWidth = 1;
             var paddleX = (canvas.width-paddleWidth) / 2;
           /* makes a circle/ball also keeps it in the diameter of my canvas */
+            
             function drawBall() {
                 ctx.beginPath();
                 ctx.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -51,13 +54,14 @@
                 y += dy;
             }
           /* This is the actual code that makes it stay within the radius of my canvas on all sides */
-        function drawPaddle() {
-    ctx.beginPath();
-    ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "##ff0000";
-    ctx.fill();
-    ctx.closePath();
- }
+        
+            function drawPaddle() {
+            ctx.beginPath();
+            ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+            ctx.fillStyle = "##ff0000";
+            ctx.fill();
+            ctx.closePath();
+           }
          setInterval(draw, 10);
           /* Makes my whole code run and work properly */
 
