@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>html template</title>
+</head>
+<style> 
+    p {
+    font-size: 20px;
+    }
+</style>
+  <body>
+        <p>🎈</p> 
+       
+
+    <script>
+        let para = document.querySelector('p'); //grabs <p> emoji
+            window.addEventListener("keydown", e => { 
+            let size = para.style.fontSize.replace('px', '');
+                size = size == '' ? '20' : size; //font size srats at 20 
+                size = parseInt(size); 
+              
+
+    if (e.key == "ArrowUp") {
+      para.style.fontSize = (size + 22) +'px'; //if press arrow up on keyboard font will increase by 22
+    } if (e.key == "ArrowDown") {
+      para.style.fontSize = (size - 18) + 'px'; //if press arrow down on keyboard font will decrease 18
+    }
+    if (size >= 70) {
+        document.body.innerHTML = document.body.innerHTML.replace("🎈", "💥")//once font gets to 70 or above it will switch to a pop emoji
+       
+    } 
+    
+  console.log("ballonsize", size)});
+  
+    </script>
+</body>
+</html>
